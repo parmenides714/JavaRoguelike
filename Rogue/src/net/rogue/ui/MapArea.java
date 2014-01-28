@@ -157,7 +157,7 @@ public class MapArea extends JPanel
 						doc.insertString(doc.getLength(), "@", doc.getStyle("green"));
 					} else
 					{
-						doc.insertString(doc.getLength(), " .  ", doc.getStyle("regular"));
+						doc.insertString(doc.getLength(), ".", doc.getStyle("regular"));
 					}
 				}
 
@@ -172,9 +172,10 @@ public class MapArea extends JPanel
 	private void addStyles(StyledDocument doc)
 	{
 		Style def = StyleContext.getDefaultStyleContext().getStyle(StyleContext.DEFAULT_STYLE);
-
+		StyleConstants.setFontFamily(def, "Monospaced");
+		StyleConstants.setFontSize(def, 18);
+		
 		Style regular = doc.addStyle("regular", def);
-		StyleConstants.setFontFamily(def, "SansSerif");
 
 		Style s = doc.addStyle("italic", regular);
 		StyleConstants.setItalic(s, true);
